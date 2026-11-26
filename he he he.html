@@ -1,0 +1,265 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=claude:viewport-fit-sides content=cover><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}</style><style>.md-table{overflow-x:auto}@media print{.md-table{overflow-x:visible}}</style><style>:root{color-scheme:light dark;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}}:root[data-theme="dark"]{color-scheme:dark;--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}:root[data-theme="light"]{color-scheme:light}@media print{:root,:root[data-theme="dark"]{color-scheme:light;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}}body{background:var(--md-bg);color:var(--md-text);max-width:720px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:10px;font:14px/1.55 -apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',sans-serif;overflow-wrap:break-word}body>:first-child{margin-top:0}h1,h2,h3,h4,h5,h6{margin:6px 0 0;line-height:1.25;font-weight:600;text-wrap:balance}h1{font-size:1.35em}h2{font-size:1.15em;color:var(--md-muted)}h3,h4,h5,h6{font-size:1em}p,ul,ol,blockquote,table,pre,hr{margin:0}strong{font-weight:600}a{color:var(--md-link);text-decoration:none}a:hover{text-decoration:underline}ul,ol{display:flex;flex-direction:column;gap:6px;padding-inline-start:22px}ul{list-style:disc}ol{list-style:decimal}li[dir]{text-align:start}:is(li,td,th)>*+:is(p,ul,ol,blockquote){margin-top:6px}blockquote{display:flex;flex-direction:column;gap:10px;border-inline-start:2px solid var(--md-rule);padding-inline-start:10px;color:var(--md-muted)}:not(pre)>code{background:var(--md-fill);padding:1px 3px;border-radius:4px;font:.92em 'SF Mono',ui-monospace,Menlo,Consolas,monospace}a>code{background:none;color:inherit}pre{background:var(--md-fill);padding:10px 12px;border-radius:6px;overflow-x:auto;font:12px/1.5 'SF Mono',ui-monospace,Menlo,Consolas,monospace;margin-block:4px}pre code{background:none;padding:0;font:inherit}[dir=rtl] pre{direction:ltr;text-align:left}[dir=rtl] code{direction:ltr;unicode-bidi:isolate}table{width:100%;border-collapse:separate;border-spacing:2px;font:inherit}th,td{padding:6px 8px;border-radius:3px;text-align:start;vertical-align:top}th{background:var(--md-fill-strong);font-weight:600}td{background:var(--md-fill)}:is(th,td) :not(pre)>code{background:transparent}hr{border:0;border-top:1px solid var(--md-rule-strong);margin-block:10px}img{max-width:100%;height:auto;border-radius:4px}</style>
+</head><body>
+<pre><code class="language-typescript">// RITI FASHION — Learn More detail screen content
+// Route suggestion: /learn-more/:slug
+// Each Homepage / Services &#34;Learn More&#34; button links to /learn-more/&lt;slug&gt;
+
+export type LearnMoreSection = &#34;Homepage&#34; | &#34;Services&#34;;
+
+export interface LearnMoreItem {
+  slug: string;
+  title: string;
+  headline: string;
+  introduction: string;
+  included: string[];
+  howWeWork: string;
+  bestSuitedFor: string;
+  ctaLabel: string;
+  ctaLink: string; // contact / quotation page
+  appearsOn: LearnMoreSection[];
+}
+
+export const learnMoreContent: LearnMoreItem[] = [
+  {
+    slug: &#34;stitching-bulk-production&#34;,
+    title: &#34;Stitching &amp; Bulk Production&#34;,
+    headline: &#34;Precision Stitching. Production Built for Scale.&#34;,
+    introduction:
+      &#34;Growing a clothing brand takes a manufacturing partner who delivers the same quality on the five-hundredth garment as on the first. RITI FASHION combines skilled stitching with organised production planning, so your approved designs reach the finished stage with consistency and care.&#34;,
+    included: [
+      &#34;Garment stitching to your approved samples and specifications&#34;,
+      &#34;Bulk production for larger quantities&#34;,
+      &#34;Consistent construction and finishing across every batch&#34;,
+      &#34;Clear communication through each stage of production&#34;,
+    ],
+    howWeWork:
+      &#34;We begin with your approved sample and requirements, plan production around them, and review quality as the work progresses.&#34;,
+    bestSuitedFor:
+      &#34;B2B clothing brands, D2C labels, online sellers, wholesalers and growing apparel businesses.&#34;,
+    ctaLabel: &#34;Request a Quotation&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Homepage&#34;],
+  },
+  {
+    slug: &#34;mens-wear-manufacturing&#34;,
+    title: &#34;Men’s Wear Manufacturing&#34;,
+    headline: &#34;Tailored Construction for the Modern Wardrobe.&#34;,
+    introduction:
+      &#34;Men’s garments depend on fit, structure and clean finishing. RITI FASHION develops and produces men’s wear with close attention to the details that shape how a garment looks, feels and lasts.&#34;,
+    included: [
+      &#34;Development and production across men’s clothing categories&#34;,
+      &#34;Stitching that follows your approved patterns and samples&#34;,
+      &#34;Attention to seams, construction and garment finishing&#34;,
+      &#34;Support from sampling through to bulk production&#34;,
+    ],
+    howWeWork:
+      &#34;You share your design or reference. We develop a sample for your approval, then move into production against that standard.&#34;,
+    bestSuitedFor:
+      &#34;Menswear labels, online clothing sellers, wholesalers and startups building a men’s collection.&#34;,
+    ctaLabel: &#34;Discuss Your Men’s Wear Requirement&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Homepage&#34;, &#34;Services&#34;],
+  },
+  {
+    slug: &#34;ladies-wear-manufacturing&#34;,
+    title: &#34;Ladies’ Wear Manufacturing&#34;,
+    headline: &#34;Refined Craftsmanship for Women’s Fashion.&#34;,
+    introduction:
+      &#34;Women’s fashion calls for precision, from drape and fit to the finer points of finishing. RITI FASHION brings a considered, detail-led approach to producing ladies’ garments that match your design vision.&#34;,
+    included: [
+      &#34;Development and production across women’s clothing categories&#34;,
+      &#34;Careful handling of design details and garment construction&#34;,
+      &#34;Sample development to confirm fit, look and finish&#34;,
+      &#34;Production support from first sample to bulk orders&#34;,
+    ],
+    howWeWork:
+      &#34;We study your design and requirements, develop a sample for evaluation, and carry the approved standard through to production.&#34;,
+    bestSuitedFor:
+      &#34;Ladies’ wear brands, boutique labels, online sellers and fashion startups.&#34;,
+    ctaLabel: &#34;Discuss Your Ladies’ Wear Requirement&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Homepage&#34;, &#34;Services&#34;],
+  },
+  {
+    slug: &#34;sampling-complete-manufacturing&#34;,
+    title: &#34;Sampling &amp; Complete Manufacturing&#34;,
+    headline: &#34;From First Sample to Finished Garment.&#34;,
+    introduction:
+      &#34;Every successful collection begins with a sample you can trust. RITI FASHION supports the whole journey, from developing the sample to producing, finishing and preparing the final garments, so you can work with one dedicated partner from design to delivery.&#34;,
+    included: [
+      &#34;Sample development for design, fit and construction review&#34;,
+      &#34;Production based on the approved sample&#34;,
+      &#34;Quality checking through the process&#34;,
+      &#34;Finishing and packaging as per agreed requirements&#34;,
+    ],
+    howWeWork:
+      &#34;Requirements, then sample, then approval, then production, then finishing, then delivery. Each step is communicated clearly so you stay informed.&#34;,
+    bestSuitedFor:
+      &#34;Brands that want a single manufacturing partner for the full process.&#34;,
+    ctaLabel: &#34;Start With a Sample Enquiry&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Homepage&#34;],
+  },
+  {
+    slug: &#34;stitching-job-work&#34;,
+    title: &#34;Stitching Job Work&#34;,
+    headline: &#34;Skilled Stitching for Your Designs.&#34;,
+    introduction:
+      &#34;Already have your fabric and design ready? Our stitching job work service turns your materials into well-constructed garments, built to your specifications with professional care.&#34;,
+    included: [
+      &#34;Garment stitching according to your approved sample or pattern&#34;,
+      &#34;Consistent stitch quality and clean construction&#34;,
+      &#34;Flexible support for varied garment types&#34;,
+      &#34;Clear coordination on requirements, timelines and delivery&#34;,
+    ],
+    howWeWork:
+      &#34;You provide the design details and materials as agreed. We stitch to your standard and keep you informed of progress.&#34;,
+    bestSuitedFor:
+      &#34;Brands, designers and businesses that source their own fabric or already hold a design.&#34;,
+    ctaLabel: &#34;Request a Quotation&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Services&#34;],
+  },
+  {
+    slug: &#34;bulk-garment-stitching&#34;,
+    title: &#34;Bulk Garment Stitching&#34;,
+    headline: &#34;Consistency, Garment After Garment.&#34;,
+    introduction:
+      &#34;Larger orders demand discipline. Our bulk stitching service focuses on keeping quality, construction and finishing uniform across every piece in the batch.&#34;,
+    included: [
+      &#34;Stitching of larger quantities against an approved sample&#34;,
+      &#34;Uniform construction and finishing throughout the order&#34;,
+      &#34;Organised production workflow&#34;,
+      &#34;Quality checks during and after stitching&#34;,
+    ],
+    howWeWork:
+      &#34;Once your sample is approved, it becomes the benchmark. Production is planned around it and monitored through to completion.&#34;,
+    bestSuitedFor:
+      &#34;Wholesalers, established apparel businesses and online sellers placing repeat or larger orders.&#34;,
+    ctaLabel: &#34;Discuss Your Bulk Order&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Services&#34;],
+  },
+  {
+    slug: &#34;complete-garment-manufacturing&#34;,
+    title: &#34;Complete Garment Manufacturing&#34;,
+    headline: &#34;One Partner. The Complete Journey.&#34;,
+    introduction:
+      &#34;For brands that want a simpler path to finished clothing, RITI FASHION manages the manufacturing process end to end. We coordinate the stages so you can focus on your brand and your customers.&#34;,
+    included: [
+      &#34;Garment development and sampling&#34;,
+      &#34;Fabric and material coordination, as per the agreed scope&#34;,
+      &#34;Stitching and production&#34;,
+      &#34;Quality checking, finishing and packaging&#34;,
+    ],
+    howWeWork:
+      &#34;You share your concept. We guide it through each stage of manufacturing and deliver finished garments to the agreed requirements.&#34;,
+    bestSuitedFor:
+      &#34;Clothing startups, D2C brands and businesses seeking a full-service manufacturing partner.&#34;,
+    ctaLabel: &#34;Request a Quotation&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Services&#34;],
+  },
+  {
+    slug: &#34;pattern-sample-development&#34;,
+    title: &#34;Pattern &amp; Sample Development&#34;,
+    headline: &#34;Where Every Garment Begins.&#34;,
+    introduction:
+      &#34;A well-developed sample prevents costly surprises later. We help turn your design into a physical garment so that you can assess fit, construction and finish before moving into production.&#34;,
+    included: [
+      &#34;Sample development from your design, reference or specifications&#34;,
+      &#34;Review of fit, construction and finishing&#34;,
+      &#34;Adjustments based on your feedback&#34;,
+      &#34;A clear, approved standard to guide production&#34;,
+    ],
+    howWeWork:
+      &#34;We interpret your requirements, develop the sample, and refine it with you until it is ready for approval.&#34;,
+    bestSuitedFor:
+      &#34;New collections, new styles and brands entering production for the first time.&#34;,
+    ctaLabel: &#34;Enquire About Sampling&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Services&#34;],
+  },
+  {
+    slug: &#34;fabric-material-handling&#34;,
+    title: &#34;Fabric &amp; Material Handling&#34;,
+    headline: &#34;Careful With Every Material.&#34;,
+    introduction:
+      &#34;Good garments start with well-managed materials. We coordinate fabric and related materials according to your approved requirements, helping production run smoothly and keeping standards intact.&#34;,
+    included: [
+      &#34;Fabric and material coordination, as per the agreed scope&#34;,
+      &#34;Careful handling of materials during production&#34;,
+      &#34;Alignment of materials with the approved sample and requirements&#34;,
+      &#34;Clear communication on material-related needs&#34;,
+    ],
+    howWeWork:
+      &#34;We confirm requirements with you first, then coordinate materials within the scope we agree together.&#34;,
+    bestSuitedFor:
+      &#34;Brands wanting support with material coordination alongside their manufacturing.&#34;,
+    ctaLabel: &#34;Discuss Your Requirements&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Services&#34;],
+  },
+  {
+    slug: &#34;quality-control&#34;,
+    title: &#34;Quality Control&#34;,
+    headline: &#34;Quality You Can See in the Detail.&#34;,
+    introduction:
+      &#34;For us, quality is a habit built into every stage, not a final inspection. We pay close attention to stitching consistency, construction and finishing to make sure garments meet the standard you approved.&#34;,
+    included: [
+      &#34;Checks on stitching consistency and garment construction&#34;,
+      &#34;Review of finishing and overall presentation&#34;,
+      &#34;Comparison against the approved sample&#34;,
+      &#34;Attention to detail throughout production&#34;,
+    ],
+    howWeWork:
+      &#34;Checks are carried out as production progresses, helping us identify and address issues early.&#34;,
+    bestSuitedFor: &#34;Every order, large or small.&#34;,
+    ctaLabel: &#34;Talk to Our Team&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Services&#34;],
+  },
+  {
+    slug: &#34;finishing-packaging&#34;,
+    title: &#34;Finishing &amp; Packaging&#34;,
+    headline: &#34;Ready for Your Customers.&#34;,
+    introduction:
+      &#34;The last details shape the first impression. Our finishing and packaging stage prepares garments to a presentable, dispatch-ready standard that reflects your brand.&#34;,
+    included: [
+      &#34;Final finishing of completed garments&#34;,
+      &#34;Preparation and packing according to agreed requirements&#34;,
+      &#34;Orderly arrangement for dispatch&#34;,
+      &#34;Care in presentation&#34;,
+    ],
+    howWeWork:
+      &#34;We confirm your finishing and packaging requirements in advance and prepare the garments to match them.&#34;,
+    bestSuitedFor:
+      &#34;Brands that want garments ready for sale or distribution.&#34;,
+    ctaLabel: &#34;Request a Quotation&#34;,
+    ctaLink: &#34;/contact&#34;,
+    appearsOn: [&#34;Services&#34;],
+  },
+];
+
+// Button text -&gt; slug map (use this to wire every &#34;Learn More&#34; button)
+export const learnMoreRoutes: Record&lt;string, string&gt; = {
+  // Homepage
+  &#34;Stitching &amp; Bulk Production&#34;: &#34;stitching-bulk-production&#34;,
+  &#34;Men’s Wear Manufacturing&#34;: &#34;mens-wear-manufacturing&#34;,
+  &#34;Ladies’ Wear Manufacturing&#34;: &#34;ladies-wear-manufacturing&#34;,
+  &#34;Sampling &amp; Complete Manufacturing&#34;: &#34;sampling-complete-manufacturing&#34;,
+  // Services page
+  &#34;Stitching Job Work&#34;: &#34;stitching-job-work&#34;,
+  &#34;Bulk Garment Stitching&#34;: &#34;bulk-garment-stitching&#34;,
+  &#34;Complete Garment Manufacturing&#34;: &#34;complete-garment-manufacturing&#34;,
+  &#34;Pattern &amp; Sample Development&#34;: &#34;pattern-sample-development&#34;,
+  &#34;Fabric &amp; Material Handling&#34;: &#34;fabric-material-handling&#34;,
+  &#34;Quality Control&#34;: &#34;quality-control&#34;,
+  &#34;Finishing &amp; Packaging&#34;: &#34;finishing-packaging&#34;,
+};
+
+export const getLearnMoreItem = (slug: string): LearnMoreItem | undefined =&gt;
+  learnMoreContent.find((item) =&gt; item.slug === slug);
+</code></pre>
+
+</body></html>

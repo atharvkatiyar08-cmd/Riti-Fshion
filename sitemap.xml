@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace YOUR-CONFIRMED-DOMAIN.example with the approved public domain before publishing. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/about.html</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/services.html</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/manufacturing-details.html</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/process.html</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/portfolio.html</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/contact.html</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/sample-edit.html</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/learnmore.html</loc></url>
+  <url><loc>https://YOUR-CONFIRMED-DOMAIN.example/privacy.html</loc></url>
+</urlset>

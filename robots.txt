@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /prototype-1-backup/
+Disallow: /prototype-2-before-upgrade/
+Disallow: /prototype-3-before-upgrade/
+
+# Replace the reserved .example hostname after the public domain is confirmed.
+Sitemap: https://YOUR-CONFIRMED-DOMAIN.example/sitemap.xml
